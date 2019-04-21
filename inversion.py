@@ -20,7 +20,7 @@ def nounp():
     #constructions with "of" such as "a perfect piece of cake"
     noun_phrase10 = '(?:<[^>]+?>){0,4}(?:<[^>]+?\s(?:N..|PN.)>)'
     noun_phrase =  '(?:' + noun_phrase2 + '|' + noun_phrase1 + '|' + noun_phrase3 + ')'
-    print(noun_phrase)
+    ##print(noun_phrase)
     return noun_phrase
 
 def patt():
