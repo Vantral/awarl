@@ -32,11 +32,9 @@ def patt():
     pattern = start + noun_phrase + verb
     return pattern
 
-def search(pattern):
+def search(pattern, directory = 'C:/Users/Prestigio/Desktop/awarl/new/'):
     errors = []
-    directory = 'C:/Users/Prestigio/Desktop/awarl/new/'
     folders = os.listdir(directory)
-    directory += '/'
     for folder in folders:
         print(folder)
         files = os.listdir(directory + folder)
@@ -44,12 +42,12 @@ def search(pattern):
             text = open_file(directory + folder + '/' + file)
             sentences = text.split('@')
             for sent in sentences:
-                if re.search(pattern, sent):
+                if re.search(pattern, sent, flags=re.IGNORECASE):
                     errors.append([re.sub('^\n', '', sent), file, folder])
     return errors
 
-def writeln(errors):
-    workbook = xlsxwriter.Workbook('inversion.xlsx')
+def writeln(errors, filename):
+    workbook = xlsxwriter.Workbook(filename)
     worksheet = workbook.add_worksheet()
     row = 0
     col = 0
