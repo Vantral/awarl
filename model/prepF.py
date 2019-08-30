@@ -5,9 +5,6 @@ def pattern():
     ##Prep + for example/for instance/maybe/however/possibly/probably +
     ##(Det (+ Adj)) N (in (,)for example (,)the course of syntax)
 
-    ## убрать such as и like
-    ##добавить TRANSITIVE for example OBJECT
-    #(?!<such\s...><as\s...>)(?!<like\s...>)
     start = '(?:<[^>]+\s(?:PR.|AVP)>)'
     verbs = open_file('trans.txt').split(', ')
     an_start = '(?:<(?:' + '|'.join(verbs) + ')\s[^N]..>)'
