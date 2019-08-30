@@ -1,6 +1,6 @@
 import telebot, treetaggerwrapper, re, time
 
-bot = telebot.TeleBot('703199230:AAGltbsQp2v_TS4esf4AF_e2C653ZiGiugQ')
+bot = telebot.TeleBot('')
 tagger = treetaggerwrapper.TreeTagger(TAGLANG='en')
 
 def open_file(filename):
