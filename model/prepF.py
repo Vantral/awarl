@@ -3,7 +3,7 @@ from inversion import nounp, writeln, open_file
 
 def pattern():
     ##Prep + for example/for instance/maybe/however/possibly/probably +
-    ##(Det (+ Adj)) N (in (,)for example (,)the course of syntax)
+    ##NP (in (,)for example (,)the course of syntax)
 
     start = '(?:<[^>]+\s(?:PR.|AVP)>)'
     verbs = open_file('trans.txt').split(', ')
