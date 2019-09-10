@@ -25,7 +25,6 @@ def nounp():
 
 
 def verbp():
-    '''неготовая VP'''
     verb = '(?:<[^>]+?\sV..>)'
     to = '(?:<to\sPRP>' + nounp() + ')'
     verb_phrase = verb + to
@@ -35,7 +34,7 @@ def verbp():
 def patt():
     #context Verb/aux + ,(?) + wh-word(+ whether + if) + aux + NP + VP
     start = '(?:<[^>]+?\sV..>)(?:,\sPUN)?(?:<[^>]+?\s(?:AVQ|PNQ|DTQ)>|<[whether|if]\s.+?>)' +\
-    '(?:<[^>]+?\sV[B|D|H|M].>)'
+            '(?:<[^>]+?\sV[B|D|H|M].>)'
     #1: all verbs, 2: comma, 3: wh-words + whether&if, 4: auxiliaries (be, do, have, modal)
     noun_phrase = nounp()
     verb = '(?:<[^>]+?\sV..>)'
